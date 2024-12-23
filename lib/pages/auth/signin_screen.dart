@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_crud/layout/main_layout.dart';
+import 'package:flutter_crud/pages/auth/validators.dart';
 import 'package:flutter_crud/widgets/custom_auth_button.dart';
 import 'package:flutter_crud/widgets/custom_text_form_field.dart';
 import 'package:get/get.dart';
 
 class SigninScreen extends StatelessWidget {
-  const SigninScreen({super.key});
+  SigninScreen({super.key});
+  final _formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
@@ -24,15 +26,26 @@ class SigninScreen extends StatelessWidget {
 
   Widget _signinForm() {
     return Form(
+        key: _formKey,
         child: Column(
-      children: [
-        const CustomTextFormField(hintText: 'userId'),
-        const CustomTextFormField(hintText: 'password'),
-        CustomAuthButton(
-          text: '로그인',
-          callback: () => Get.toNamed('/'),
-        ),
-      ],
-    ));
+          children: [
+            const CustomTextFormField(
+              hintText: 'userId',
+              validator: userIdvalidator,
+            ),
+            const CustomTextFormField(
+              hintText: 'password',
+              validator: passwordValidator,
+            ),
+            CustomAuthButton(
+              text: '로그인',
+              callback: () {
+                if (_formKey.currentState!.validate()) {
+                  Get.toNamed('/');
+                }
+              },
+            ),
+          ],
+        ));
   }
 }

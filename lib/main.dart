@@ -21,11 +21,11 @@ class MyApp extends StatelessWidget {
         ),
         GetPage(
           name: '/join',
-          page: () => const JoinScreen(),
+          page: () => JoinScreen(),
         ),
         GetPage(
           name: '/signin',
-          page: () => const SigninScreen(),
+          page: () => SigninScreen(),
         ),
       ],
       title: 'Flutter Demo',
