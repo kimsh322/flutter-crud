@@ -2,38 +2,20 @@ import 'package:flutter/material.dart';
 import 'package:flutter_crud/layout/main_layout.dart';
 import 'package:get/get.dart';
 
-class MyHomePage extends StatefulWidget {
+class MyHomePage extends StatelessWidget {
   const MyHomePage({super.key, required this.title});
   final String title;
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  final int _counter = 0;
-
-  void _incrementCounter() {
-    // setState(() {
-    //   _counter++;
-    // });
-    Get.toNamed('/first');
-  }
-
-  @override
   Widget build(BuildContext context) {
     return MainLayout(title: 'CRUD 연습', children: [
-      Center(
+      const Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
             Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
+              '그냥 CRUD 연습해보려고 만든 프로젝트',
+            )
           ],
         ),
       ),
@@ -41,7 +23,19 @@ class _MyHomePageState extends State<MyHomePage> {
         onPressed: () {
           Get.toNamed('/first');
         },
-        child: const Text('first page'),
+        child: const Text('게시판 페이지로 이동하기'),
+      ),
+      ElevatedButton(
+        onPressed: () {
+          Get.toNamed('/join');
+        },
+        child: const Text('회원가입 페이지로 이동하기'),
+      ),
+      ElevatedButton(
+        onPressed: () {
+          Get.toNamed('/signin');
+        },
+        child: const Text('로그인 페이지로 이동하기'),
       ),
     ]);
   }

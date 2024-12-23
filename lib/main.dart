@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_crud/pages/first_page.dart';
+import 'package:flutter_crud/pages/auth/join_screen.dart';
+import 'package:flutter_crud/pages/auth/signin_screen.dart';
+import 'package:flutter_crud/pages/board/board_screen.dart';
 import 'package:flutter_crud/pages/home_screen.dart';
 import 'package:get/get.dart';
 
@@ -15,7 +17,15 @@ class MyApp extends StatelessWidget {
       getPages: [
         GetPage(
           name: '/first',
-          page: () => const FirstPage(),
+          page: () => const BoardScreen(),
+        ),
+        GetPage(
+          name: '/join',
+          page: () => const JoinScreen(),
+        ),
+        GetPage(
+          name: '/signin',
+          page: () => const SigninScreen(),
         ),
       ],
       title: 'Flutter Demo',
