@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       getPages: [
         GetPage(
-          name: '/first',
+          name: '/board',
           page: () => const BoardScreen(),
         ),
         GetPage(

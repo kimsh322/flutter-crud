@@ -11,17 +11,19 @@ class JoinScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MainLayout(title: '회원가입', children: [
-      Container(
-        alignment: Alignment.center,
-        child: const Text(
-          '회원가입',
-          style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
-        ),
-      ),
-      const SizedBox(height: 20),
-      _joinForm(),
-    ]);
+    return MainLayout(
+        title: '회원가입',
+        child: Column(children: [
+          Container(
+            alignment: Alignment.center,
+            child: const Text(
+              '회원가입',
+              style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+            ),
+          ),
+          const SizedBox(height: 20),
+          _joinForm(),
+        ]));
   }
 
   Widget _joinForm() {

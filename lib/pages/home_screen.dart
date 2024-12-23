@@ -8,35 +8,37 @@ class MyHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MainLayout(title: 'CRUD 연습', children: [
-      const Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              '그냥 CRUD 연습해보려고 만든 프로젝트',
-            )
-          ],
-        ),
-      ),
-      ElevatedButton(
-        onPressed: () {
-          Get.toNamed('/first');
-        },
-        child: const Text('게시판 페이지로 이동하기'),
-      ),
-      ElevatedButton(
-        onPressed: () {
-          Get.toNamed('/join');
-        },
-        child: const Text('회원가입 페이지로 이동하기'),
-      ),
-      ElevatedButton(
-        onPressed: () {
-          Get.toNamed('/signin');
-        },
-        child: const Text('로그인 페이지로 이동하기'),
-      ),
-    ]);
+    return MainLayout(
+        title: 'CRUD 연습',
+        child: Column(children: [
+          const Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Text(
+                  '그냥 CRUD 연습해보려고 만든 프로젝트',
+                )
+              ],
+            ),
+          ),
+          ElevatedButton(
+            onPressed: () {
+              Get.toNamed('/board');
+            },
+            child: const Text('게시판 페이지로 이동하기'),
+          ),
+          ElevatedButton(
+            onPressed: () {
+              Get.toNamed('/join');
+            },
+            child: const Text('회원가입 페이지로 이동하기'),
+          ),
+          ElevatedButton(
+            onPressed: () {
+              Get.toNamed('/signin');
+            },
+            child: const Text('로그인 페이지로 이동하기'),
+          ),
+        ]));
   }
 }

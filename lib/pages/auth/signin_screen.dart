@@ -11,17 +11,19 @@ class SigninScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MainLayout(title: '로그인', children: [
-      Container(
-        alignment: Alignment.center,
-        child: const Text(
-          '로그인',
-          style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
-        ),
-      ),
-      const SizedBox(height: 20),
-      _signinForm(),
-    ]);
+    return MainLayout(
+        title: '로그인',
+        child: Column(children: [
+          Container(
+            alignment: Alignment.center,
+            child: const Text(
+              '로그인',
+              style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+            ),
+          ),
+          const SizedBox(height: 20),
+          _signinForm(),
+        ]));
   }
 
   Widget _signinForm() {
